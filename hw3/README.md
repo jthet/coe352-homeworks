@@ -7,7 +7,7 @@ This homework uses the following IVP:
 \frac{dy}{dt} = -\alpha y\\
 ```
 ```math
-y(0) = 1, \alpha > 0, 0 ≤ t ≤ T
+y(0) = 1 \quad \quad \alpha > 0 \quad \quad 0 ≤ t ≤ T
 ```
 
 #### Calculating the exact solution
@@ -25,16 +25,17 @@ To calculate the exact solution, the following logic was used:
 ln(y) + C = - \alpha t
 ```
 ```math
-y = e^ {\alpha t + C} = Ce^ {\alpha t}
+y = e^ {- \alpha t + C} = Ce^ {- \alpha t}
 ```
 Then using the initial condition y(0) = 1, we get our exact solution:
 ```math
-y = e^ {\alpha t}
+y = e^ {- \alpha t}
 ```
 
 
 ## Forward Euler
 Now, we will derive the update equation using Forward Euler time discretization
+
 Forward Euler:
 ```math
 y_{n+1} = y_n + \Delta t \cdot f(t_n, y_n)
@@ -74,14 +75,14 @@ Using only convergent &Delta;t's:
 Now, we will derive the update equation using Backward Euler time discretization
 Backward Euler:
 ```math
-y_{n+1} = y_n + \Delta t \cdot f(t_{n+1} y_{n+1}
+y_{n+1} = y_n + \Delta t \cdot f(t_{n+1} y_{n+1})
 ```
 
 Using
 ```math
 y_{n+1} = y_n + \Delta t f(t_{n+1} y_{n+1}) = y_n - \alpha \Delta t y_{n+1}
 ```
-We can then derive our Backward Euler Output equation:
+We can then derive our Backward Euler update equation:
 
 ```math
 y_{n+1} = \frac {y_n}{1 + \alpha \Delta t} 
@@ -98,37 +99,30 @@ The python script to find the numerical solution using this method is `backwardE
 
 The Plot of the numerical and exact solution for various values &Delta;t, using &alpha; = 1:
 
-![Forward Euler Plot](https://github.com/jthet/coe352-homeworks/blob/main/hw3/images/Figure_3.png)
+![Backward Euler Plot](https://github.com/jthet/coe352-homeworks/blob/main/hw3/images/Figure_3.png)
 
 
 
 ## Trapezoidal Method
-Now, we will derive the update equation using Forward Euler time discretization
-Backward Euler:
+Now, we will derive the update equation using Trapezoidal Method time discretization
+Trapezoidal Method:
 ```math
-y_{n+1} = y_n + \Delta t \cdot f(t_{n+1} y_{n+1}
+y_{n+1} = y_n + \frac {\Delta t}{2} (f(t_{n} y_{n}) + f(t_{n+1} y_{n+1}) )
 ```
 
 Using
 ```math
-y_{n+1} = y_n + \Delta t f(t_{n+1} y_{n+1}) = y_n - \alpha \Delta t y_{n+1}
+y_{n+1} = y_n + \frac {\Delta t}{2} (- \alpha y_{n} - \alpha y_{n+1}) \quad => \quad y_{n+1} (1 + \frac {\alpha \Delta t}{2}) = y_{n} (1 - \frac {\alpha \Delta t}{2})
 ```
-We can then derive our Backward Euler Output equation:
+We can then derive our Trapezoidal Method update equation:
 
 ```math
-y_{n+1} = \frac {y_n}{1 + \alpha \Delta t} 
+y_{n+1} = y_n \frac {(1 - \frac {\alpha \Delta t}{2})}{(1 + \frac {\alpha \Delta t}{2})}
 ```
-It should be noted that the backward euler method for this IVP is unconditionally stable, as the stability condition is
 
-```math
-|\frac {1}{1 + \alpha \Delta t}| ≤ 1
-```
-Which is always satisfied as both &Delta;t and &alpha; are always positive.
-
-
-The python script to find the numerical solution using this method is `backwardEuler.py`.
+The python script to find the numerical solution using this method is `trapezoidal.py`.
 
 The Plot of the numerical and exact solution for various values &Delta;t, using &alpha; = 1:
 
-![Forward Euler Plot](https://github.com/jthet/coe352-homeworks/blob/main/hw3/images/Figure_4.png)
+![Trapezoidal Method Plot](https://github.com/jthet/coe352-homeworks/blob/main/hw3/images/Figure_4.png)
 
