@@ -1,6 +1,6 @@
 # Homework 4
 
-This directory contains a Python script named "bisection.py" that uses the Bisection Method to find an approximate root of a function within a specified interval.
+This directory contains a Python script `bisection.py` that uses the Bisection Method to find an approximate root of a function within a specified interval.
 
 ## Script Description:
 
