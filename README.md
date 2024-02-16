@@ -12,9 +12,15 @@ Homework 3, this directory contains the following scripts:
 
 [Homework 3 Submission](https://github.com/jthet/coe352-homeworks/blob/main/hw3/README.md)
 
-
 ### hw4
-Homework 4, this directory contains a Python script bisection.py that uses the Bisection Method to find an approximate root of a function within a specified interval.
+Homework 4, this directory contains a Python script `bisection.py` that uses the Bisection Method to find an approximate root of a function within a specified interval.
+
+[Homework 4 Submission](https://github.com/jthet/coe352-homeworks/blob/main/hw4/README.md)
+
+### hw5
+Homework 5, this directory contains Python scripts `galerkin.py` and `lagrangian.py` that perform the galerkin and lagrangian finite element approximations on a 1 dimensional grid [0, 1].
+
+[Homework 5 Submission](https://github.com/jthet/coe352-homeworks/blob/main/hw5/README.md)
 
 Jackson Thetford
 The University of Texas at Austin | Fall 2023
