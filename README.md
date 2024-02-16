@@ -14,7 +14,7 @@ Homework 3, this directory contains the following scripts:
 
 
 ### hw4
-Homework 4
+Homework 4, this directory contains a Python script bisection.py that uses the Bisection Method to find an approximate root of a function within a specified interval.
 
 Jackson Thetford
 The University of Texas at Austin | Fall 2023
